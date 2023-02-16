@@ -1,3 +1,7 @@
+# at least for replit \/
+# first run 'bundle install'
+# then run 'bundle exec ruby main.rb'
+
 require "mechanize"
 require "nokogiri"
 
@@ -16,6 +20,7 @@ parsed_content = Nokogiri::HTML(page)
 # Write header to output file
 fp.write("OSU News Digest\n\n")
 
+print "Working..."
 
 # Search page using CSS selectors
 PATH_FORMAT = Regexp.new("\/\/\*\/div\[1]\/div\[1]\/div\[\d\]\/div\/div\[3]\/div\[1]\/h3")
