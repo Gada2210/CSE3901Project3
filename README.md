@@ -2,6 +2,7 @@
 ## Authors:
   1. Christian Barrett
   2. Hannah Ackley
+  3. Chris Johnson
 
 ## How to install and run on system
   1. clone repository
