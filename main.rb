@@ -20,14 +20,20 @@ parsed_content = Nokogiri::HTML(page)
 # Write header to output file
 fp.write("OSU News Digest\n\n")
 
-print "Working..."
+puts "Working..."
 
-# Search page using CSS selectors
-PATH_FORMAT = Regexp.new("\/\/\*\/div\[1]\/div\[1]\/div\[\d\]\/div\/div\[3]\/div\[1]\/h3")
-
-parsed_content.xpath("//h3").each do |headline|
+# Write headlines and their links
+parsed_content.xpath("//h3/a").each do |headline|
     fp.write(headline.content, "\n")
+    fp.write(headline['href'], "\n")
 end
 
-#<h3 class="pp-block-item-heading">How sharing kindness helps ease anxiety and depression</h3>
+# Alternative implementation that puts headlines and links in separate maps
+# headlines = parsed_content.xpath('//h3/a').map { |headline| headline.content }
+# links = parsed_content.xpath('//h3/a').map { |link| link['href'] }
 
+# l1 = parsed_content.css('a.pp-block-item-container').map { |link| link['href'] }
+# puts l1
+
+# h1 = parsed_content.css('h3.pp-block-item-heading').map { |title| title.content}
+# puts h1
