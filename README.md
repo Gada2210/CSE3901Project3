@@ -3,6 +3,7 @@
   1. Christian Barrett
   2. Hannah Ackley
   3. Chris Johnson
+  4. Gautam Agarwal
 
 ## How to install and run on system
   1. clone repository
